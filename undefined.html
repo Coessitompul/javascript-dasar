@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undefined</title>
+</head>
+<body>
+  <script>
+
+    let name;
+
+    if(name === undefined){
+      // alert("UNDEFINED");
+      console.info("UNDEFINED");
+    } else {
+      // alert("DEFINED");
+      console.info("DEFINED");
+    }
+
+    const names = ["Coes", "Priandi"];
+
+    if (names[2] === undefined){
+      console.info("Array undefined");
+    } else {
+      console.info("Array Defined");
+    }
+
+
+    const person = {
+      name: "Coes",
+    };
+    if(person.name === undefined) {
+      console.info("Object Undefined");
+    } else {
+      console.info("Object Defined");
+    }
+
+
+  </script>
+</body>
+</html>
