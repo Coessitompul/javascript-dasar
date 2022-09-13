@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Rest Parameters</title>
+</head>
+<body>
+  <script>
+
+    // menggunakan rest parameter dengan menambahkan titik 3 kali (...)
+    function sum(name, ...data){
+      let total = 0;
+      for (item of data) {
+        total += item;
+      }
+      document.writeln(`<p>Total ${name} is ${total}</p>`)
+    }
+
+    sum("Orange", 10, 20, 30, 40, 50, 60);
+    sum("Apple", 10, 20, 30, 40, 50, 60);
+    sum("Banana", 10, 20, 30, 40, 50, 60);
+
+    const values = [10, 10, 10, 10, 10];
+    // jika bentur datanya array, maka gunakan lagi titik 3 (...) supaya bisa menggunakan rest parameter [ini biasa disebut dengan spread syntax]
+    sum("Test", ...values);
+
+    function oldSum(){
+      let total = 0;
+      for (const argument of arguments) {
+        total += argument
+      }
+      document.writeln(`<p>Total is ${total}</p>`);
+    }
+
+    oldSum(1, 2, 3, 4, 5);
+
+
+
+  </script>
+</body>
+</html>
