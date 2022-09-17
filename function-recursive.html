@@ -35,6 +35,16 @@
     // 5 * 4 * 3 * 2 * factorialRecursive(1)
     // 5 * 4 * 3 * 2 * 1
 
+    function loopingNumber(value){
+      if(value === 0){
+        return 0;
+      } else {
+        return value + loopingNumber(value - 1);
+      }
+    }
+
+    document.writeln(loopingNumber(5));
+
 
   </script>
 </body>
