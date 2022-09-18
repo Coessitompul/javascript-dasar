@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destructuring</title>
+</head>
+<body>
+  <script>
+
+    // ini namanya scope walaupun kurung kurawal
+    {
+      const names = ["Coes", "Priandi", "Sitompul", "Budi", "Joko"];
+      // menggunakan destructuring pada array itu menggunakan [] kurung siku
+      const [firstName, middleName, lastName, ...others] = names;
+
+      // sebelum mennggunakan destructuring
+      // const firstName = names[0];
+      // const middleName = names[1];
+      // const lastName = names[2];
+
+      console.info(firstName);
+      console.info(middleName);
+      console.info(lastName);
+      console.info(others);
+    }
+
+    // ini namanya scope walaupun kurung kurawal
+    {
+      const person = {
+        firstName: "Coes",
+        lastName: "Sitompul",
+        address: {
+          street: "Jalan Belum Ada",
+          city: "Jakarta",
+          country: "Indonesia"
+        },
+        hobby: "Game",
+        channel: "Programmer Zaman Now"
+      };
+
+      // menggunakan destructuring pada object itu menggunakan {} kurung kurawal
+      // let {firstName, lastName, address, ...others} = person; // destructuring satu level
+      let {firstName, lastName, address: {street, city, country}, ...others} = person; // destructuring dua level, dalam hal ini address tidak bisa diakses lagi, yang bisa diakses hanya street, city, country
+
+      console.info(firstName);
+      console.info(lastName);
+      console.info(street);
+      console.info(city);
+      console.info(country);
+      console.info(others);
+
+    }
+
+    // ini namanya scope walaupun kurung kurawal
+    {
+      // function displayPerson(person) {
+      //   console.info(person.firstName);
+      //   console.info(person.middleName);
+      //   console.info(person.lastName);
+      // }
+
+      // menggunakan destructuring parameter object
+      function displayPerson({firstName, middleName, lastName}) {
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      const person = {
+        firstName: "Coes",
+        middleName: "Priandi",
+        lastName: "Sitompul"
+      };
+
+
+      displayPerson(person);
+
+    }
+
+    // ini namanya scope walaupun kurung kurawal
+    {
+      // function sum(array) {
+      //   return array[0] + array[1];
+      // }
+
+      // menggunakan destructuring parameter array
+      function sum([first, second]) {
+        return first + second;
+      }
+
+      console.info(sum([1, 1]));
+      console.info(sum([10, 10]));
+    }
+
+    // ini namanya scope walaupun kurung kurawal
+    {
+      const names = ["Budi", "Khannedy"];
+      const [firstName = "Coes", middleName = "Priandi", lastName = "Sitompul"] = names;
+
+      console.info(firstName);
+      console.info(middleName);
+      console.info(lastName);
+    }
+
+    // ini namanya scope walaupun kurung kurawal
+    {
+      const person = {
+        firstName: "Coes",
+        lastName: "Sitompul"
+      };
+
+      // menggunakan destructuring pada object itu menggunakan {} kurung kurawal
+      // let {firstName, lastName, address, ...others} = person; // destructuring satu level
+      let {firstName: namaDepan, 
+        middleName: namaTengah = "Priandi", 
+        lastName: namaBelakang
+      } = person; // destructuring dua level, dalam hal ini address tidak bisa diakses lagi, yang bisa diakses hanya street, city, country
+      // namaDepan, middleName, namaTengah = sebagai nama variabel lain untuk kita gunakan supaya lebih familiar
+
+      console.info(namaDepan);
+      console.info(namaTengah);
+      console.info(namaBelakang);
+
+    }
+
+
+
+  </script>
+</body>
+</html>
