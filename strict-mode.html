@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strict Mode</title>
+</head>
+<body>
+  <script>
+
+
+    // sebelum menggunakan use strict maka ketika ada with sintax maka program akan berjalan 
+    // function useStrictMode(){
+    //   const person = {
+    //     firstName: "Coes"
+    //   };
+
+    //   with (person) {
+    //     console.info(firstName);
+    //   }
+    // }
+
+    // Ketika menggunakan use strict maka ketika ada with sintax maka program tidak akan berjalan
+    function useStrictMode(){
+      'use strict'
+      const person = {
+        firstName: "Coes"
+      };
+
+      // error
+      with (person) {
+        console.info(firstName);
+      }
+    }
+
+    useStrictMode();
+
+  </script>
+</body>
+</html>
