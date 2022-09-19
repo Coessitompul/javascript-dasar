@@ -12,23 +12,19 @@
     // Constructor Function biasakan menggunakan huruf besar pada setiap kalimat 
     // contoh: Person, PersonPremium pemberian nama seperti ini merupakan stardart yang diberikan javascript
 
-    function Person(){
+    function Person(firstName, lastName){
       // harus menggunakan this untuk membuat property di dalam contructor
-      this.firstName = "";
-      this.lastName = "";
+      this.firstName = firstName;
+      this.lastName = lastName;
       this.sayHello = function (name){
         console.info(`Hello ${name}, my name is ${this.firstName}`);
       };
     }
 
-    const coes = new Person();
-    coes.firstName = "Coes";
-    coes.lastName = "Sitompul";
+    const coes = new Person("Coes", "Sitompul");
     coes.sayHello("Joko");
 
-    const budi = new Person();
-    budi.firstName = "Budi";
-    budi.lastName = "Nugraha";
+    const budi = new Person("Budi", "Nugraha");
     budi.sayHello("Joko");
 
     console.log(coes);
