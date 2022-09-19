@@ -16,16 +16,22 @@
       // harus menggunakan this untuk membuat property di dalam contructor
       this.firstName = "";
       this.lastName = "";
+      this.sayHello = function (name){
+        console.info(`Hello ${name}, my name is ${this.firstName}`);
+      };
     }
 
     const coes = new Person();
     coes.firstName = "Coes";
     coes.lastName = "Sitompul";
-    console.log(coes);
+    coes.sayHello("Joko");
 
     const budi = new Person();
     budi.firstName = "Budi";
     budi.lastName = "Nugraha";
+    budi.sayHello("Joko");
+
+    console.log(coes);
     console.log(budi);
 
   </script>
