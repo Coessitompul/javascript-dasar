@@ -13,12 +13,20 @@
     // contoh: Person, PersonPremium pemberian nama seperti ini merupakan stardart yang diberikan javascript
 
     function Person(){
-
+      // harus menggunakan this untuk membuat property di dalam contructor
+      this.firstName = "";
+      this.lastName = "";
     }
 
     const coes = new Person();
-    const budi = new Person();
+    coes.firstName = "Coes";
+    coes.lastName = "Sitompul";
+    console.log(coes);
 
+    const budi = new Person();
+    budi.firstName = "Budi";
+    budi.lastName = "Nugraha";
+    console.log(budi);
 
   </script>
 </body>
